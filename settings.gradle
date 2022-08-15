@@ -1,2 +1,3 @@
 rootProject.name = "AndroidStudyTree"
 include ':app'
+include ':lib_common'
