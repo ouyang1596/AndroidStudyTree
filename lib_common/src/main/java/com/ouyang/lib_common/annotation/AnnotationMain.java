@@ -10,9 +10,9 @@ import java.lang.annotation.RetentionPolicy;
  *
  * @author ryan
  */
-@StringDef({AnnotationMain.COUNTDOWNLATCH, AnnotationMain.JNI})
+@StringDef({AnnotationMain.MULTI_THREAD, AnnotationMain.JNI})
 @Retention(RetentionPolicy.SOURCE)
 public @interface AnnotationMain {
     String JNI = "JNI";
-    String COUNTDOWNLATCH = "COUNTDOWNLATCH";
+    String MULTI_THREAD = "多线程";
 }

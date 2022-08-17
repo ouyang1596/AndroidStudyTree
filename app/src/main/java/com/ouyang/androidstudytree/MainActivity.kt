@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
                 AnnotationMain.JNI -> {
                     startActivity(Intent(this@MainActivity, JNIActivity::class.java))
                 }
-                AnnotationMain.COUNTDOWNLATCH -> {
-                    startActivity(Intent(this@MainActivity, CountDownLatchActivity::class.java))
+                AnnotationMain.MULTI_THREAD -> {
+                    startActivity(Intent(this@MainActivity, MultiThreadActivity::class.java))
                 }
             }
         }
@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun addData() {
         list.add(AnnotationMain.JNI)
-        list.add(AnnotationMain.COUNTDOWNLATCH)
+        list.add(AnnotationMain.MULTI_THREAD)
     }
 }
