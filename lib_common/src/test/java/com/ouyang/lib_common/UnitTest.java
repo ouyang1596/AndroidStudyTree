@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class UnitTest {
@@ -65,5 +66,56 @@ public class UnitTest {
             max = Math.max(max, next);
         }
         return max;
+    }
+
+    public int[] twoSum(int[] nums, int target) {
+        int[] a = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            a[0] = i;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    a[1] = j;
+                    return a;
+                }
+            }
+        }
+        return a;
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        int max = 0;
+        int k = -1;
+        int n = 0;
+        HashSet set = new HashSet();
+        for (int i = 0; i < s.length(); i++) {
+            if (i != 0) {
+                set.remove(s.charAt(i - 1));
+            }
+            for (int j = n; j < s.length(); j++) {
+                if (!set.contains(s.charAt(j))) {
+                    set.add(s.charAt(j));
+                } else {
+                    n = j;
+                    break;
+                }
+            }
+            max = Math.max(max, set.size());
+        }
+        return max;
+    }
+
+    public boolean isPalindrome(int x) {
+        String s = String.valueOf(x);
+        for (int i = 0; i < s.length(); i++) {
+            int b = s.length() - 1 - i;
+            if (i >= b) {
+                break;
+            } else {
+                if (s.charAt(i) != s.charAt(b)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
