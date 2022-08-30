@@ -1,0 +1,5 @@
+<resources>
+    <string name="MULTI_THREAD">多线程</string>
+    <string name="JNI">JNI</string>
+    <string name="ASM">字节码插桩</string>
+</resources>

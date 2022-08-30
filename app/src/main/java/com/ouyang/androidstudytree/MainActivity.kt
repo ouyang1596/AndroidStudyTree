@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
                 AnnotationMain.MULTI_THREAD -> {
                     startActivity(Intent(this@MainActivity, MultiThreadActivity::class.java))
                 }
+                AnnotationMain.ASM -> {
+                    startActivity(Intent(this@MainActivity, ASMActivity::class.java))
+                }
             }
         }
         multiTypeAdapter?.register(String::class, binder)
@@ -42,5 +45,6 @@ class MainActivity : AppCompatActivity() {
     private fun addData() {
         list.add(AnnotationMain.JNI)
         list.add(AnnotationMain.MULTI_THREAD)
+        list.add(AnnotationMain.ASM)
     }
 }

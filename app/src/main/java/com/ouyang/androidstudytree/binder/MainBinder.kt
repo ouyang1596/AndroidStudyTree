@@ -31,6 +31,8 @@ class MainBinder : BaseItemViewBinder<String, MainBinder.ViewHolder>(), View.OnC
     }
 
     override fun onClick(v: View?) {
+        //这里会插入字节码
+//        Toast.makeText(ApplicationBase.instance, "hello world", Toast.LENGTH_LONG).show()
         onItemClickListener?.let {
             onItemClickListener.OnItemClick(v, v?.tag)
         }

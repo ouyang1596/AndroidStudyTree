@@ -15,4 +15,5 @@ import java.lang.annotation.RetentionPolicy;
 public @interface AnnotationMain {
     String JNI = "JNI";
     String MULTI_THREAD = "多线程";
+    String ASM = "字节码插桩";
 }

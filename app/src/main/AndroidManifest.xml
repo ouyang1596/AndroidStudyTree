@@ -11,8 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudyTree">
         <activity
+            android:name=".ASMActivity"
+            android:label="@string/ASM"></activity>
+        <activity
             android:name=".MultiThreadActivity"
-            android:label="@string/MULTI_THREAD"></activity>
+            android:label="@string/MULTI_THREAD" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -24,7 +27,7 @@
         </activity>
         <activity
             android:name=".JNIActivity"
-            android:label="@string/JNI"></activity>
+            android:label="@string/JNI" />
     </application>
 
 </manifest>
