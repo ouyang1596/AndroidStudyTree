@@ -10,11 +10,8 @@ import java.lang.annotation.RetentionPolicy;
  *
  * @author ryan
  */
-@StringDef({AnnotationMain.MULTI_THREAD, AnnotationMain.JNI})
+@StringDef({AnnotationJetpack.PAGING})
 @Retention(RetentionPolicy.SOURCE)
-public @interface AnnotationMain {
-    String JNI = "JNI";
-    String MULTI_THREAD = "多线程";
-    String ASM = "字节码插桩";
-    String JETPACK = "jetpack";
+public @interface AnnotationJetpack {
+    String PAGING = "Paging";
 }

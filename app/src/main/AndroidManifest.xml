@@ -11,8 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudyTree">
         <activity
+            android:name=".jetpack.PagingActivity"
+            android:label="@string/PAGING"></activity>
+        <activity
+            android:name=".JetpackActivity"
+            android:label="@string/JETPACK" />
+        <activity
             android:name=".ASMActivity"
-            android:label="@string/ASM"></activity>
+            android:label="@string/ASM" />
         <activity
             android:name=".MultiThreadActivity"
             android:label="@string/MULTI_THREAD" />

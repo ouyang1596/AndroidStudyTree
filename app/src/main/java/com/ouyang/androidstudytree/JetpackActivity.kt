@@ -5,12 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.drakeet.multitype.MultiTypeAdapter
-import com.ouyang.androidstudytree.binder.MainBinder
-import com.ouyang.lib_common.annotation.AnnotationMain
+import com.ouyang.androidstudytree.binder.JetpackBinder
+import com.ouyang.androidstudytree.jetpack.PagingActivity
+import com.ouyang.lib_common.annotation.AnnotationJetpack
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class JetpackActivity : AppCompatActivity() {
     var multiTypeAdapter: MultiTypeAdapter? = null
 
     val list = ArrayList<Any>()
@@ -18,23 +19,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_jetpack)
         addData()
         multiTypeAdapter = MultiTypeAdapter(list)
-        var binder = MainBinder()
+        var binder = JetpackBinder()
         binder.setOnItemClickListener { view, item ->
             when (item) {
-                AnnotationMain.JNI -> {
-                    startActivity(Intent(this@MainActivity, JNIActivity::class.java))
-                }
-                AnnotationMain.MULTI_THREAD -> {
-                    startActivity(Intent(this@MainActivity, MultiThreadActivity::class.java))
-                }
-                AnnotationMain.ASM -> {
-                    startActivity(Intent(this@MainActivity, ASMActivity::class.java))
-                }
-                AnnotationMain.JETPACK -> {
-                    startActivity(Intent(this@MainActivity, JetpackActivity::class.java))
+                AnnotationJetpack.PAGING -> {
+                    startActivity(Intent(this@JetpackActivity, PagingActivity::class.java))
                 }
             }
         }
@@ -46,9 +38,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addData() {
-        list.add(AnnotationMain.JNI)
-        list.add(AnnotationMain.MULTI_THREAD)
-        list.add(AnnotationMain.ASM)
-        list.add(AnnotationMain.JETPACK)
+        list.add(AnnotationJetpack.PAGING)
     }
 }
